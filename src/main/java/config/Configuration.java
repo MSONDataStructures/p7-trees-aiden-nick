@@ -12,10 +12,10 @@ import structures.BinaryTreeUtility;
  */
 public class Configuration {
 	public static <T> BinaryTreeNode<T> createBinaryTreeNode(BinaryTreeNode<T> left, T elem, BinaryTreeNode<T> right) {
-		BinaryTreeNodeImpl<T> node = new BinaryTreeNodeImpl<>(elem); // Create a new node with the element
-		node.setLeftChild(left);  // Set the left child
-		node.setRightChild(right); // Set the right child
-		return node; // Return the node
+		BinaryTreeNodeImpl<T> node = new BinaryTreeNodeImpl<>(elem);
+		node.setLeftChild(left);
+		node.setRightChild(right);
+		return node;
 	}
 	
 	public static BinaryTreeUtility createBinaryTreeUtility(){
