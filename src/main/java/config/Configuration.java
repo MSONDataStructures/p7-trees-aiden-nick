@@ -14,9 +14,9 @@ public class Configuration {
 		node.setRightChild(right);
 		return node;
 	}
-	
-	public static BinaryTreeUtility createBinaryTreeUtility(){
-		return null;
+
+	public static BinaryTreeUtility createBinaryTreeUtility() {
+		return new BinaryTreeUtilityImpl();
 	}
 
 	public static <T extends Comparable<? super T>> BinarySearchTree<T> createBinarySearchTree() {
