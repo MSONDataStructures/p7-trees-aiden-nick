@@ -6,7 +6,7 @@ public class BinaryTreeNodeImpl<T> implements BinaryTreeNode<T> {
     private BinaryTreeNode<T> leftChild;
     private BinaryTreeNode<T> rightChild;
 
-    // Constructor to initialize the node with data, left and right children as null
+
     public BinaryTreeNodeImpl(T data) {
         if (data == null) {
             throw new NullPointerException("Data cannot be null");

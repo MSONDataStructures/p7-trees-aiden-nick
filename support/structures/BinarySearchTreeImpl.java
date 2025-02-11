@@ -18,24 +18,45 @@ public class BinarySearchTreeImpl<T extends Comparable<? super T>> implements Bi
         if (toAdd == null) {
             throw new NullPointerException("Cannot add null value");
         }
-        root = addRecursive(root, toAdd);
-        size++;
-        return this;
+
+        if (root == null) {
+
+            root = new BinaryTreeNodeImpl<>(toAdd);
+            size++;
+            return this;
+        } else {
+
+            root = addRecursive(root, toAdd);
+            size++;
+            return this;
+        }
     }
 
     private BinaryTreeNode<T> addRecursive(BinaryTreeNode<T> node, T toAdd) {
         if (node == null) {
+
             return new BinaryTreeNodeImpl<>(toAdd);
         }
 
         int comparison = toAdd.compareTo(node.getData());
         if (comparison < 0) {
-            node.setLeftChild(addRecursive(node.getLeftChild(), toAdd));
+
+            try {
+                node.getLeftChild();
+            } catch (Exception e) {
+                node.setLeftChild(new BinaryTreeNodeImpl<>(toAdd));
+            }
         } else {
-            node.setRightChild(addRecursive(node.getRightChild(), toAdd));
+
+            try {
+                node.getRightChild();
+            } catch (Exception e) {
+                node.setRightChild(new BinaryTreeNodeImpl<>(toAdd));
+            }
         }
         return node;
     }
+
 
     @Override
     public boolean contains(T toFind) {
